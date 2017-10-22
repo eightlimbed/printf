@@ -8,10 +8,12 @@ int main(void)
 	char *name = "Lee";
 	int b;
 	int x;
-
+  
 	b = -9729345;
 	x = _printf("%i\n", b);
 	_printf("Hi %s, my name is %s.\nChar: %c\nPercent: %%\n", s, name, c);
+	_printf("Negative:[%d]\n", -709209);
+	_printf("Int size: %d\n", 645235);
 	printf("count (echo $?) = %d\n", x);
 	return (x);
 }
