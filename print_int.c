@@ -1,14 +1,15 @@
-#include <stdarg.h>
 #include "holberton.h"
+#include <stdarg.h>
 /**
- * print_dig - function will print any sized digit
- * @args: represents number of arguments passed from main
- * Return: function will return 1 upon successful compilation
+ * print_int - function will print an int upon passing
+ * @args: represents arguments to be printed
+ * Return: function will return length of string
  */
 
-int print_dig(va_list args)
+int print_int(va_list args)
 {
-	int n;
+	/** Same function called to print an int as a digit */
+	int x;
 	int divisor;
 	int count;
 	unsigned int num;
@@ -16,17 +17,17 @@ int print_dig(va_list args)
 	int returnsize;
 
 	divisor = 1; /** Begins breakdown of large number with division by 1 */
-	n = va_arg(args, int);
-	num = n; /** Allows greater val to be held */
+	x = va_arg(args, int);
+	num = x; /** Allows greater val to be held */
 
-	if (n < 0) /** If value passed is negative */
+	if (x < 0) /** If value passed is negative */
 	{
-		num = -n;
+		num = -x;
 		val = num; /** Holds value of num while num is analyzed */
 		_putchar('-');
 	}
 	else
-		val = num;
+			val = num;
 	for (count = 0; num / 10 > 0; count++) /** Decides how big number is */
 	{
 		num = num / 10;
@@ -37,8 +38,8 @@ int print_dig(va_list args)
 	{
 		_putchar(val / divisor + '0');
 		val = val % divisor;
-		divisor = divisor / 10;
-		--count;
+			divisor = divisor / 10;
+			--count;
 	}
 	_putchar(val + '0'); /** To convert from ASCII */
 	return (returnsize);
