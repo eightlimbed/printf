@@ -44,10 +44,13 @@ int _printf(const char *format, ...)
 			j = 0;
 			while (arr[j].special != NULL)
 			{
+				/* since format[i] = '%' we want to look at the next character
+				 * which is format[i + 1]
+				 */
 				if (*(arr[j].special) == format[i + 1])
 				{
-					/* call the corresponding function and increment count by
-					 * the return value of that function
+					/* this line will call the corresponding function and 
+					 * increment count by the return value of that function
 					 */
 					count += arr[j].f(args);
 					/* increment i here to not print the 's' part of '%s'
@@ -57,14 +60,17 @@ int _printf(const char *format, ...)
 				j++;
 			}
 		}
-		/* don't print the '%' if in special_mode */
+
+		/* if format[i] isn't a '%' just print the char as usual and increment
+		 * count by 1 */
 		if (!(special_mode))
 		{
 			_putchar(format[i]);
 			count++;
 		}
+
+		/* turn special mode off if we were in special mode */
 		else
-			/* turn special mode off if we were in special mode */
 			special_mode = 0;
 		i++;
 	}
