@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
 
@@ -45,8 +46,11 @@ int _printf(const char *format, ...)
 			{
 				if (*(arr[j].special) == format[i + 1])
 				{
-					arr[j].f(args);
-					/* increment i here to not print the '%' 
+					/* call the corresponding function and increment count by
+					 * the return value of that function
+					 */
+					count += arr[j].f(args);
+					/* increment i here to not print the 's' part of '%s'
 					 * on the next loop around */
 					i++;
 				}
@@ -55,10 +59,13 @@ int _printf(const char *format, ...)
 		}
 		/* don't print the '%' if in special_mode */
 		if (!(special_mode))
+		{
 			_putchar(format[i]);
+			count++;
+		}
 		else
-			_putchar(format[i + 1]);
-		count++;
+			/* turn special mode off if we were in special mode */
+			special_mode = 0;
 		i++;
 	}
 	va_end(args);

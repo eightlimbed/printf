@@ -11,6 +11,7 @@
 
 int print_string(va_list args)
 {
+	/* create pointer to the argument */
 	char *s = va_arg(args, char *);
 	unsigned int count = 0;
 	
@@ -20,8 +21,10 @@ int print_string(va_list args)
 	while (*s != '\0')
 	{
 		_putchar(*s);
-		s++;
 		count++;
+		s++;
 	}
+
+	/* return the length of the string */
 	return (count);
 }
