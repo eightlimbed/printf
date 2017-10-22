@@ -20,6 +20,10 @@ int _printf(const char *format, ...)
 		{"s", print_string},
 		{"%", print_percent},
 		{"d", print_dig},
+<<<<<<< HEAD
+=======
+		{"i", print_int},
+>>>>>>> 5b67997286c1caf2f6d9319c4be8b00458c69696
 		{NULL, NULL}
 	};
 
