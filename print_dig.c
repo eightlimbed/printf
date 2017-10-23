@@ -15,19 +15,21 @@ int print_dig(va_list args)
 	unsigned int val;
 	int rtsize;
 
+	count = 0;
 	divisor = 1; /** Begins breakdown of large number with division by 1 */
 	n = va_arg(args, int);
 	num = n; /** Allows greater val to be held */
 
 	if (n < 0) /** If value passed is negative */
 	{
-		num = -n;
+		num = n * -1;
 		val = num; /** Holds value of num while num is analyzed */
 		_putchar('-');
+		count++;
 	}
 	else
 		val = num;
-	for (count = 0; num / 10 > 0; count++) /** Decides how big number is */
+	for (; num / 10 > 0; count++) /** Decides how big number is */
 	{
 		num = num / 10;
 		divisor = divisor * 10; /** Increments divisor with each passing */
