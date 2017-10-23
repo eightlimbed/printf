@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include "holberton.h"
 /**
- * print_dig - function will print any sized digit
+ * print_int - function will print any sized digit
  * @args: represents number of arguments passed from main
  * Return: function will return 1 upon successful compilation
  */
