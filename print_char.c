@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdarg.h>
 #include "holberton.h"
 
@@ -10,6 +11,8 @@
 
 int print_char(va_list args)
 {
+	if (args == NULL)
+		return (0);
 	/* chars get promoted to ints when using va_arg */
 	_putchar(va_arg(args, int));
 	return (1);
