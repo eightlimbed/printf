@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	va_list args;
 	unsigned int i, j, count;
 	spec arr[] = {{"c", print_char}, {"s", print_string}, {NULL, NULL} };
-
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
@@ -24,7 +23,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0' || (format[i + 1] == ' ' && format[i + 2] == '\0'))
+			if (format[i + 1] == 0)
 				return (-1);
 			j = 0;
 			while (arr[j].special != NULL)
