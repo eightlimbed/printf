@@ -11,10 +11,10 @@ int print_int(va_list args)
 	/** Same function called to print an int as a digit */
 	int x;
 	int divisor;
-	int count;
+	int count = 0;
 	unsigned int num;
 	unsigned int val;
-	int returnsize;
+	int retsize = 0;
 
 	divisor = 1; /** Begins breakdown of large number with division by 1 */
 	x = va_arg(args, int);
@@ -28,19 +28,21 @@ int print_int(va_list args)
 	}
 	else
 			val = num;
-	for (count = 0; num / 10 > 0; count++) /** Decides how big number is */
+	for (; num / 10 > 0; count++) /** Decides how big number is */
 	{
 		num = num / 10;
 		divisor = divisor * 10; /** Increments divisor with each passing */
 	}
-	returnsize = count; /** Will return count of characters to main fxn */
+	retsize = count + 1; /** Will return count of characters to main fxn */
 	while (count > 0)
 	{
 		_putchar(val / divisor + '0');
 		val = val % divisor;
-			divisor = divisor / 10;
-			--count;
+		divisor = divisor / 10;
+		--count;
 	}
+	if (x < 0)
+		retsize++;
 	_putchar(val + '0'); /** To convert from ASCII */
-	return (returnsize);
+	return (retsize);
 }
