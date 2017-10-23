@@ -8,24 +8,22 @@
 
 int print_dig(va_list args)
 {
-	int n;
+	int x;
 	int divisor;
-	int count;
+	int count = 0;
 	unsigned int num;
 	unsigned int val;
-	int rtsize;
+	int retsize = 0;
 
-	count = 0;
 	divisor = 1;
-	n = va_arg(args, int);
-	num = n;
+	x = va_arg(args, int);
+	num = x;
 
-	if (n < 0)
+	if (x < 0)
 	{
-		num = n * -1;
+		num = -x;
 		val = num;
 		_putchar('-');
-		count++;
 	}
 	else
 		val = num;
@@ -34,7 +32,7 @@ int print_dig(va_list args)
 		num = num / 10;
 		divisor = divisor * 10;
 	}
-	rtsize = count;
+	retsize = count + 1;
 	while (count > 0)
 	{
 		_putchar(val / divisor + '0');
@@ -42,6 +40,8 @@ int print_dig(va_list args)
 		divisor = divisor / 10;
 		--count;
 	}
+	if (x < 0)
+		retsize++;
 	_putchar(val + '0');
-	return (rtsize);
+	return (retsize);
 }
