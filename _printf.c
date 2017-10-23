@@ -39,6 +39,12 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
+			if ((arr[j].special) == NULL)
+			{
+				_putchar(format[i + 1]);
+				i++;
+			}
+
 		}
 		if (!(special_mode))
 		{
