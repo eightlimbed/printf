@@ -25,7 +25,8 @@ int _printf(const char *format, ...)
 	special_mode = 0, count = 0, i = 0;
 	while (format[i])
 	{
-		(format[i] == '%') ? special_mode = 1 : special_mode = 0;
+		if (format[i] == '%')
+			special_mode = 1;
 		if (special_mode)
 		{
 			j = 0;
