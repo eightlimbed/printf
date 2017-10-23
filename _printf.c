@@ -14,7 +14,13 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	unsigned int i, j, count, percent_count = 0;
-	spec arr[] = {{"c", print_char}, {"s", print_string}, {NULL, NULL} };
+	spec arr[] = {
+		{"c", print_char}, 
+		{"s", print_string},
+		{"d", print_dig},
+		{"i", print_int},
+		{NULL, NULL} 
+	};
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
