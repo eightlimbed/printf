@@ -14,7 +14,7 @@ int print_string(va_list args)
 	/* create pointer to the argument */
 	char *s = va_arg(args, char *);
 	unsigned int count = 0;
-	
+
 	if (s == NULL)
 		return (0);
 
