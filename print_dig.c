@@ -16,25 +16,25 @@ int print_dig(va_list args)
 	int rtsize;
 
 	count = 0;
-	divisor = 1; /** Begins breakdown of large number with division by 1 */
+	divisor = 1;
 	n = va_arg(args, int);
-	num = n; /** Allows greater val to be held */
+	num = n;
 
-	if (n < 0) /** If value passed is negative */
+	if (n < 0)
 	{
 		num = n * -1;
-		val = num; /** Holds value of num while num is analyzed */
+		val = num;
 		_putchar('-');
 		count++;
 	}
 	else
 		val = num;
-	for (; num / 10 > 0; count++) /** Decides how big number is */
+	for (; num / 10 > 0; count++)
 	{
 		num = num / 10;
-		divisor = divisor * 10; /** Increments divisor with each passing */
+		divisor = divisor * 10;
 	}
-	rtsize = count; /** Will return count of characters to main fxn */
+	rtsize = count;
 	while (count > 0)
 	{
 		_putchar(val / divisor + '0');
@@ -42,6 +42,6 @@ int print_dig(va_list args)
 		divisor = divisor / 10;
 		--count;
 	}
-	_putchar(val + '0'); /** To convert from ASCII */
+	_putchar(val + '0');
 	return (rtsize);
 }
