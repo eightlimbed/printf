@@ -16,7 +16,7 @@ int print_string(va_list args)
 	unsigned int count = 0;
 
 	if (s == NULL)
-		return (0);
+		return (-1);
 
 	while (*s != '\0')
 	{
