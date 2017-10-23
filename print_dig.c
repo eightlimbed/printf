@@ -13,7 +13,7 @@ int print_dig(va_list args)
 	int count;
 	unsigned int num;
 	unsigned int val;
-	int returnsize;
+	int retsize;
 
 	divisor = 1; /** Begins breakdown of large number with division by 1 */
 	n = va_arg(args, int);
@@ -32,7 +32,7 @@ int print_dig(va_list args)
 		num = num / 10;
 		divisor = divisor * 10; /** Increments divisor with each passing */
 	}
-	returnsize = count; /** Will return count of characters to main fxn */
+	retsize = count; /** Will return count of characters to main fxn */
 	while (count > 0)
 	{
 		_putchar(val / divisor + '0');
@@ -41,5 +41,5 @@ int print_dig(va_list args)
 		--count;
 	}
 	_putchar(val + '0'); /** To convert from ASCII */
-	return (returnsize);
+	return (retsize);
 }
