@@ -8,7 +8,8 @@
 ### Usage
 - Include `holberton.h`
 - Call the function: `_printf` passing in a string and optional arguments
-- Use format specifiers for desired output.
+- Use format specifiers for desired output
+- Function returns `-1` upon error and `(null)` if a string argument is `NULL`
 ### Format Specifiers
 File Name | Description | Format Specifier
 --- | --- | ---
