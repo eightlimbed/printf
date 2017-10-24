@@ -1,14 +1,25 @@
 # _printf
 #### [Holberton School ](http://holbertonschool.com)Low Level Programming Assignment 0x10. C - printf
 ---
-## Usage
+### Prototype
+####`int _printf(const char *format, ...)`
 ---
+### Files
+---
+File Name | Description
+--- | ---
+`_printf.c` | Produces output according to format
+`_putchar.c` | Writes a character (1 byte) to stdout
+`holberton.h` | Header file with function prototypes and struct
+`parser.c` | Parses the arguments of `_printf` and calls corresponding function
+`percent_controller.c` | Controls flow when a '%' is found in format 
 
-File Name | Description | Language(s)
+### Format Specifiers
+---
+File Name | Description | Format Specifier
 --- | --- | ---
-`_printf.c` | Produces output according to format | C
-`_putchar.c` | Writes a character to stdout | C
-`print_char.c` | Prints a character | C
-`print_percent` | Prints a percent sign | C
-`print_string` | Prints a string | C
-`holberton.h` | Program header file | C
+`print_char.c` | Prints a character | `%c`
+`print_string.c` | Prints a string | `%s`
+`print_digit.c` | Prints a decimal number | `%d`
+`print_int.c` | Prints an integer | `%i`
+`print_binary.c` | Prints the binary version of an unsigned integer | `%b`
