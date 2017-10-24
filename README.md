@@ -2,7 +2,7 @@
 #### [Holberton School ](http://holbertonschool.com)Low Level Programming Assignment 0x10. C - printf
 ---
 ### Prototype
-####`int _printf(const char *format, ...)`
+#### `int _printf(const char *format, ...)`
 ---
 ### Files
 ---
