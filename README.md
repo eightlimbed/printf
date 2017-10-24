@@ -1,5 +1,4 @@
 # _printf
-#### [Holberton School ](http://holbertonschool.com)Low Level Programming Assignment 0x10. C - printf
 ##### Inspired by [`printf`](http://clc-wiki.net/wiki/C_standard_library:stdio.h:printf) from the C Standard Library
 ---
 ### Prototype
