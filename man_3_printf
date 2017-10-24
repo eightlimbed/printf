@@ -1,0 +1,64 @@
+.TH man 1 "22 OCT 2017" "_printf man page"
+.SH NAME
+.B _printf
+- prints an unlimited number or arguments.
+.SH SYNOPSIS
+.B #include
+"holberton.h"
+.PP
+.B int _printf(char *format, ...);
+.PP
+.SH DESCRIPTION
+This is a function that can take in an unknown number of arguments according to a format and print them according to a conversion specifier. The implementation of _printf is heavily dependent upon the concept behind variadic functions and data structures. Upon calling, the function will search the specified string for a specifier that tells the function to expand based on the data type that is being passed. Upon finding a match, the function will expand the specifier and print whatever value is held in that data type that was fed from main. It will then return the printed string and count of characters in said string, to main. The function will then continue printing whatever it was passed until it reaches a null byte.
+.PP
+.B Return value
+.IP
+Upon successful running, the function will return the number of characters printed, excluding the null byte used to end output to strings.
+.PP
+.B Format of the format string
+.IP
+The format string is a character string which can contain any format specifiers (i.e. "%d") to input any arguments desired to the string. In order for the function to return the desired output, the format specifiers must match the desired type to be expanded.
+.PP
+.B The flag characters
+.PP
+.IP
+The character % can be followed by any of the following characters:
+.IP
+.B c:
+This specifier will print a character.
+.IP
+.B s:
+This specifier will print a string.
+.IP
+.B d:
+This specifier will print a digit.
+.IP
+.B i:
+This specifier will print an integer.
+.IP
+.B b:
+This specifier will print input as binary.
+.SH EXAMPLE
+.PP
+Program will return an integer that holds the length of the passed value (98) to the format specifier "%d"
+.PP
+#include "holberton.h"
+.PP
+int main(void)
+.br
+{
+.br
+int num;
+.PP
+num = _printf("%d\\n", 98);
+.br
+return (num);
+.br
+}
+.SH OPTIONS
+.B _printf
+does not take any options
+.SH BUGS
+No known bugs
+.SH AUTHOR
+Lee Gaines and Lindsey Hemenez
