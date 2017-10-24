@@ -1,5 +1,8 @@
 #include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "holberton.h"
+#define BUF 1000
 
 /**
  * print_binary - prints the binary version of a decimal number
@@ -12,9 +15,10 @@ int print_binary(va_list args)
 {
 	int chars_printed = 0;
 	unsigned int num = va_arg(args, unsigned int);
-	int arr[1000];
+	int arr[BUF];
 	int i = 0;
 
+	printf("num = %d\n", num);
 	while (num > 0)
 	{
 		arr[i] = num % 2;
