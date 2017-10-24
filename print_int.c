@@ -42,7 +42,7 @@ int print_int(va_list args)
 		divisor = divisor / 10;
 		--count;
 	}
-	if (x < 0 )
+	if (x < 0)
 		retsize++;
 	_putchar(val + '0');
 	return (retsize);
