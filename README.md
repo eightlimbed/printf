@@ -31,3 +31,10 @@ File Name | Description
 `holberton.h` | Header file with function prototypes and struct
 `parser.c` | Parses the arguments of `_printf` and calls corresponding function
 `percent_controller.c` | Controls flow when a '%' is found in format 
+### About
+This project was created by [Linds Hemenez](http://github.com/hemenez) and [Lee
+Gaines](http://github.com/eightlimbed) at [Holberton
+School](http://holbertonschool.com).
+
+All files were created and compiled on `Ubuntu 14.04 LTS` using `GCC 4.8.4` with
+the following flags: `-Wall -Werror -Wextra -pedantic`.

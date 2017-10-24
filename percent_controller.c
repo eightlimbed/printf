@@ -1,4 +1,3 @@
-#include <stdarg.h>
 #include <stdlib.h>
 #include "holberton.h"
 
@@ -21,6 +20,7 @@ int percent_controller(const char *format, va_list args, unsigned int i)
 		{"d", print_dig},
 		{"i", print_int},
 		{"b", print_binary},
+		{"u", print_unsigned},
 		{NULL, NULL}
 	};
 

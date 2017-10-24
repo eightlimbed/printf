@@ -1,6 +1,4 @@
 #include <stdlib.h>
-#include <stdarg.h>
-#include <stdio.h>
 #include "holberton.h"
 
 /**
