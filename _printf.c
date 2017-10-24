@@ -49,12 +49,11 @@ int _printf(const char *format, ...)
 					i++;
 					count++;
 				}
-				else
+				else if (format[i] == '%' && format[i + 1] != '%')
 				{
 					_putchar('%');
 					count++;
 				}
-
 			}
 		}
 		else
