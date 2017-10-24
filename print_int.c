@@ -1,4 +1,3 @@
-#include <stdarg.h>
 #include "holberton.h"
 /**
  * print_int - function will print any sized digit
