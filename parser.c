@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -22,6 +23,8 @@ int parser(const char *format, va_list args)
 		{
 			chars_printed += percent_controller(format, args, i);
 			i++;
+			if (format[i] == 0)
+				return (-1);
 		}
 		else
 		{
