@@ -2,7 +2,8 @@
 ##### Inspired by [`printf`](http://clc-wiki.net/wiki/C_standard_library:stdio.h:printf) from the C Standard Library
 ---
 ### Prototype
-#### `int _printf(const char *format, ...)`
+#### `int _printf(const char *format, ...)` Returns the number of characters
+printed (int).
 ---
 ### Usage
 - Include `holberton.h`
@@ -17,6 +18,7 @@ File Name | Description | Format Specifier
 `print_digit.c` | Prints a decimal number | `%d`
 `print_int.c` | Prints an integer | `%i`
 `print_binary.c` | Prints the binary version of an unsigned integer | `%b`
+`print_unsigned.c` | Prints an unsigned decimal number | `%u`
 ### Example Usage
 - `_printf("Hello, world\n")` *prints "Hello, world" followed by a new line*
 - `_printf("Hello %s", "Linds")` *prints "Hello, Linds"*
