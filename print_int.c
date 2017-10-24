@@ -8,42 +8,32 @@
 
 int print_int(va_list args)
 {
-	int x;
-	int divisor;
-	int count = 0;
-	unsigned int num;
-	unsigned int val;
-	int retsize = 0;
+	int n = va_arg(args, int);
+	unsigned int num, div, chars_printed;
 
-	divisor = 1;
-	x = va_arg(args, int);
+	chars_printed = 0;
 
-	if (x < 0)
+	if (n < 0)
 	{
-		num = -1 * x;
-		val = num;
+		num = -n;
 		_putchar('-');
+		chars_printed++;
 	}
+
 	else
+		num = n;
+
+	div = 1;
+	while (num / div > 9)
 	{
-		num = x;
-		val = num;
+		div = div * 10;
 	}
-	for (; num / 10 > 0; count++)
+	while (div > 0)
 	{
-		num = num / 10;
-		divisor = divisor * 10;
+		_putchar(num / div + '0');
+		chars_printed++;
+		num = num % div;
+		div = div / 10;
 	}
-	retsize = count + 1;
-	while (count > 0)
-	{
-		_putchar(val / divisor + '0');
-		val = val % divisor;
-		divisor = divisor / 10;
-		--count;
-	}
-	if (x < 0)
-		retsize++;
-	_putchar(val + '0');
-	return (retsize);
+	return (chars_printed);
 }
