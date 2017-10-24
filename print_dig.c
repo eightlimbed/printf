@@ -9,9 +9,8 @@
 int print_dig(va_list args)
 {
 	int n = va_arg(args, int);
-	unsigned int num, div, chars_printed;
-
-	chars_printed = 0;
+	unsigned int num, div;
+	int chars_printed = 0;
 
 	if (n < 0)
 	{
