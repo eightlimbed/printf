@@ -48,7 +48,7 @@ int percent_controller(const char *format, va_list args, unsigned int i)
 		{
 			_putchar('%');
 			_putchar(format[i + 1]);
-			chars_printed++;
+			chars_printed += 2;
 		}
 	}
 	return (chars_printed);
