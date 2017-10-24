@@ -1,9 +1,14 @@
 # _printf
 #### [Holberton School ](http://holbertonschool.com)Low Level Programming Assignment 0x10. C - printf
+##### Inspired by [`printf`](http://clc-wiki.net/wiki/C_standard_library:stdio.h:printf) from the C Standard Library
 ---
 ### Prototype
 #### `int _printf(const char *format, ...)`
 ---
+### Usage
+- Include `holberton.h`
+- Call the function: `_printf` passing in a string and optional arguments
+- Use format specifiers for desired output.
 ### Format Specifiers
 File Name | Description | Format Specifier
 --- | --- | ---
