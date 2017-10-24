@@ -6,7 +6,7 @@
  * Return: function will return 1 upon successful compilation
  */
 
-int print_dig(va_list args)
+int print_int(va_list args)
 {
 	int x;
 	int divisor;
@@ -20,7 +20,7 @@ int print_dig(va_list args)
 
 	if (x < 0)
 	{
-		num = -1 * x;
+		num = -x;
 		val = num;
 		_putchar('-');
 	}
