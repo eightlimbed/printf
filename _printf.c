@@ -13,7 +13,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	unsigned int i, j, count, percent_count = 0;
+	unsigned int i, j, count;
 	spec arr[] = { 
 		{"c", print_char},
 		{"s", print_string},
@@ -29,8 +29,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			percent_count++;
-			if ((format[i + 1] == 0 || format[i + 1] == ' ') && percent_count == 1)
+			if ((format[i + 1] == 0 || format[i + 1] == ' '))
 				return (-1);
 			j = 0;
 			while (arr[j].special != NULL)
@@ -44,11 +43,18 @@ int _printf(const char *format, ...)
 			}
 			if (arr[j].special == NULL)
 			{
-				if (format[i] == '%' && format[i + 1] != '%')
+				if (format[i] == '%' && format[i + 1] == '%')
+				{
+					_putchar('%');
+					i++;
+					count++;
+				}
+				else
 				{
 					_putchar('%');
 					count++;
 				}
+
 			}
 		}
 		else
