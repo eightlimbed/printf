@@ -21,7 +21,7 @@ int print_binary(va_list args)
 		num /= 2;
 		i++;
 	}
-	
+
 	i--;
 	while (i >= 0)
 	{
