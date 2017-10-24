@@ -20,6 +20,7 @@ int percent_controller(const char *format, va_list args, unsigned int i)
 		{"s", print_string},
 		{"d", print_dig},
 		{"i", print_int},
+		{"b", print_binary},
 		{NULL, NULL}
 	};
 
