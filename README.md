@@ -4,6 +4,22 @@
 ### Prototype
 #### `int _printf(const char *format, ...)`
 ---
+### Format Specifiers
+---
+File Name | Description | Format Specifier
+--- | --- | ---
+`print_char.c` | Prints a character | `%c`
+`print_string.c` | Prints a string | `%s`
+`print_digit.c` | Prints a decimal number | `%d`
+`print_int.c` | Prints an integer | `%i`
+`print_binary.c` | Prints the binary version of an unsigned integer | `%b`
+---
+### Example Usage
+---
+- `_printf("Hello, world\n")` *prints "Hello, world" followed by a new line*
+- `_printf("Hello %s", "Linds")` *prints "Hello, Linds"*
+- `_printf("%d\n", 123)` *printf the decimal number, 123 followed by a new line*
+- `_printf("%c", 'x')` *prints the character 'x'
 ### Files
 ---
 File Name | Description
@@ -14,12 +30,3 @@ File Name | Description
 `parser.c` | Parses the arguments of `_printf` and calls corresponding function
 `percent_controller.c` | Controls flow when a '%' is found in format 
 
-### Format Specifiers
----
-File Name | Description | Format Specifier
---- | --- | ---
-`print_char.c` | Prints a character | `%c`
-`print_string.c` | Prints a string | `%s`
-`print_digit.c` | Prints a decimal number | `%d`
-`print_int.c` | Prints an integer | `%i`
-`print_binary.c` | Prints the binary version of an unsigned integer | `%b`
