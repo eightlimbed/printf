@@ -23,7 +23,6 @@ int print_dig(va_list args)
 		num = -1 * x;
 		val = num;
 		_putchar('-');
-		retsize++;
 	}
 	else
 	{
@@ -43,6 +42,8 @@ int print_dig(va_list args)
 		divisor = divisor / 10;
 		--count;
 	}
+	if (x < 0)
+		retsize++;
 	_putchar(val + '0');
 	return (retsize);
 }
