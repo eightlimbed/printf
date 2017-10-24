@@ -17,7 +17,6 @@ int print_int(va_list args)
 
 	divisor = 1;
 	x = va_arg(args, int);
-	num = x;
 
 	if (x < 0)
 	{
@@ -26,7 +25,10 @@ int print_int(va_list args)
 		_putchar('-');
 	}
 	else
+	{
+		num = x;
 		val = num;
+	}
 	for (; num / 10 > 0; count++)
 	{
 		num = num / 10;

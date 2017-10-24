@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include "holberton.h"
 /**
- * print_dig - function will print any sized digit
+ * print_int - function will print any sized digit
  * @args: represents number of arguments passed from main
  * Return: function will return 1 upon successful compilation
  */
@@ -17,16 +17,18 @@ int print_dig(va_list args)
 
 	divisor = 1;
 	x = va_arg(args, int);
-	num = x;
 
 	if (x < 0)
 	{
-		num = -x;
+		num = -1 * x;
 		val = num;
 		_putchar('-');
 	}
 	else
+	{
+		num = x;
 		val = num;
+	}
 	for (; num / 10 > 0; count++)
 	{
 		num = num / 10;
