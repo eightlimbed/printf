@@ -13,56 +13,13 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	unsigned int i, j, count;
-	spec arr[] = { 
-		{"c", print_char},
-		{"s", print_string},
-		{"d", print_dig},
-		{"i", print_int},
-		{NULL, NULL}
-	};
+	int chars_printed;
+
 	if (format == NULL)
 		return (-1);
+
 	va_start(args, format);
-	count = i = 0;
-	while (format[i])
-	{
-		if (format[i] == '%')
-		{
-			if ((format[i + 1] == 0 || format[i + 1] == ' '))
-				return (-1);
-			j = 0;
-			while (arr[j].special != NULL)
-			{
-				if (*(arr[j].special) == format[i + 1])
-				{
-					count += arr[j].f(args); 
-					i++;
-				}
-				j++;
-			}
-			if (arr[j].special == NULL)
-			{
-				if (format[i] == '%' && format[i + 1] == '%')
-				{
-					_putchar('%');
-					i++;
-					count++;
-				}
-				else if (format[i] == '%' && format[i + 1] != '%')
-				{
-					_putchar('%');
-					count++;
-				}
-			}
-		}
-		else
-		{
-			_putchar(format[i]);
-			count++;
-		}
-		i++;
-	}
+	chars_printed = parser(format, args);
 	va_end(args);
-	return (count);
+	return (chars_printed);
 }
