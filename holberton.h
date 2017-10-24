@@ -9,6 +9,7 @@ int print_dig(va_list args);
 int print_int(va_list args);
 int print_binary(va_list args);
 int print_unsigned(va_list args);
+int print_octal(va_list args);
 int parser(const char *format, va_list args);
 int percent_controller(const char *format, va_list args, unsigned int i);
 
