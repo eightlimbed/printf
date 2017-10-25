@@ -16,7 +16,7 @@ int percent_controller(const char *format, va_list args, unsigned int i)
 	unsigned int j, chars_printed = 0;
 	spec arr[] = { {"c", print_char}, {"s", print_string}, {"d", print_dig},
 		{"i", print_int}, {"b", print_binary}, {"u", print_unsigned},
-		{"o", print_octal}, {NULL, NULL} };
+		{"o", print_octal}, {"x", print_hex_low}, {NULL, NULL} };
 
 	if ((format[i + 1] == 0 || format[i + 1] == ' '))
 		return (-1);
@@ -28,6 +28,7 @@ int percent_controller(const char *format, va_list args, unsigned int i)
 		{
 			chars_printed += arr[j].f(args);
 			i++;
+			break;
 		}
 		j++;
 	}
